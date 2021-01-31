@@ -38,9 +38,9 @@ love of god.
 
 ## Against the competition
 
-The 1st is png2linetext vs whatever I could quickly find:
+The 1st is latest png2linetext algorithm vs whatever I could quickly find:
 
-![](./examples/1612074114.png)
+![](./examples/1612117172.png)
 
 vs https://manytools.org/hacker-tools/convert-images-to-ascii-art/go/
 
