@@ -35,4 +35,31 @@ love of god.
 
 ![](./examples/1612074093.png)
 ![](./examples/1612074107.png)
+
+## Against the competition
+
+The 1st is png2linetext vs whatever I could quickly find:
+
 ![](./examples/1612074114.png)
+
+vs https://manytools.org/hacker-tools/convert-images-to-ascii-art/go/
+
+![](./examples/1612074741.png)
+
+vs https://www.text-image.com/convert/pic2ascii.cgi
+
+![](./examples/1612075210.png)
+
+vs https://www.ascii-art-generator.org/
+
+![](./examples/1612075258.png)
+
+vs https://www.topster.net/ascii-generator/
+
+![](./examples/1612075432.png)
+
+vs http://www.glassgiant.com/ascii/ascii.php
+
+![](./examples/1612075461.png)
+
+
