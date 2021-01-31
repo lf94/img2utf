@@ -21,7 +21,7 @@ This implementation may not use 3x3 mask or those exact characters, but
 something more suitable.
 */
 
-const linetext: [char; 25] = [
+const linetext: [char; 27] = [
   '🮘',
   
   '🬎',
@@ -33,6 +33,9 @@ const linetext: [char; 25] = [
   '🬂',
   '▌',
   '🬭',
+
+  '⯁',
+  '⯁',
   
   '🬏',
   '🬾',
@@ -55,7 +58,7 @@ const linetext: [char; 25] = [
   
 ];
 
-const masks: [[[u8; 3]; 3]; 25] = [
+const masks: [[[u8; 3]; 3]; 27] = [
   [
     [0,0,0],
     [0,0,0],
@@ -102,6 +105,18 @@ const masks: [[[u8; 3]; 3]; 25] = [
     [1,1,1],
     [1,1,1],
     [0,0,0],
+  ],
+
+  
+  [
+    [1,0,0],
+    [0,0,0],
+    [0,0,1],
+  ],
+  [
+    [0,0,1],
+    [0,0,0],
+    [1,0,0],
   ],
   
   [
