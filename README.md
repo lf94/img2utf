@@ -33,8 +33,8 @@ monospace, unlike terminals, the examples below have been included as images. If
 you work for Google or Mozilla or Microsoft or Apple please fix this for the
 love of god.
 
-![](./examples/1612074093.png)
-![](./examples/1612074107.png)
+![](./examples/1612117326.png)
+![](./examples/1612117350.png)
 
 ## Against the competition
 
