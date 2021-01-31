@@ -33,10 +33,16 @@ monospace, unlike terminals, the examples below have been included as images. If
 you work for Google or Mozilla or Microsoft or Apple please fix this for the
 love of god.
 
+![](./inputs/bird1bit.png)
 ![](./examples/1612117350.png)
+![](./inputs/bloodhound1bit.png)
 ![](./examples/1612117326.png)
 
 ## Against the competition
+
+The source image:
+
+![](./inputs/lobsters1bit.png)
 
 The 1st is latest png2linetext algorithm vs whatever I could quickly find:
 
