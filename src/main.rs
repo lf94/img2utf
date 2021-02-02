@@ -34,12 +34,12 @@ const linetext: [char; 42] = [
   '🭌',
   '🭁',
 
-  
+
   '🬎',
   '🬹',
   '▋',
   '🮉',
-  
+
   '🮇',
   '🮂',
   '▍',
@@ -53,7 +53,7 @@ const linetext: [char; 42] = [
   '◥',
   '◢',
   '◥',
-  
+
   '🬏',
   '🬾',
   '🭙',
@@ -62,17 +62,17 @@ const linetext: [char; 42] = [
   '🭤',
   '🭉',
   '🬞',
-  
+
   '╺',
   '╹',
   '╸',
   '╻',
-  
+
   '🭢',
   '🭗',
   '🬼',
   '🭇',
-  
+
 ];
 
 const masks: [[[u8; 3]; 3]; 42] = [
@@ -173,7 +173,7 @@ const masks: [[[u8; 3]; 3]; 42] = [
     [1,1,1],
     [0,0,0],
   ],
-  
+
   [
     [1,1,1],
     [0,0,0],
@@ -190,7 +190,7 @@ const masks: [[[u8; 3]; 3]; 42] = [
     [1,0,1],
   ],
 
-  
+
   [
     [1,0,0],
     [0,0,0],
@@ -211,7 +211,7 @@ const masks: [[[u8; 3]; 3]; 42] = [
     [1,0,0],
     [1,1,0],
   ],
-  
+
   [
     [1,1,1],
     [1,1,1],
@@ -253,7 +253,7 @@ const masks: [[[u8; 3]; 3]; 42] = [
     [1,0,0],
   ],
 
-  
+
   [
     [1,1,1],
     [1,0,0],
@@ -274,7 +274,7 @@ const masks: [[[u8; 3]; 3]; 42] = [
     [1,0,1],
     [1,0,1],
   ],
-  
+
   [
     [1,1,0],
     [1,1,1],
@@ -300,15 +300,15 @@ const masks: [[[u8; 3]; 3]; 42] = [
 /*
   Turns an array of RGBA (8 bits per channel) bytes into an array of 0s and 1s.
 */
-fn pixels_to_bitplane(buf: &[u8], width: u32, height: u32) -> Vec<Vec<u8>> {
+fn pixels_to_bitplane(buf: &[u8], width: u32, height: u32, no_chanels: u32) -> Vec<Vec<u8>> {
   let mut nbuf: Vec<Vec<u8>> = vec![];
-  
+
   for y in 0..height {
     let mut line = vec![];
     for x in 0..width {
-      let idx = ((y * (width * 4)) + (x * 4)) as usize;
+      let idx = ((y * width + x) * no_chanels) as usize;
       if idx >= buf.len() { break; }
-      
+
       line.push(buf[idx] / 255);
     }
     nbuf.push(line);
@@ -362,7 +362,7 @@ fn bitplane_to_linetext(buf: Vec<Vec<u8>>, width: u32, height: u32) {
     // so print a missing pattern character.
     // Basically for debugging. Change the " " to be a "?" or whatever you want.
     // Set to " " as the default for missing patterns.
-    // 
+    //
     if shifted >= 3 {
       print!(" ");
       //println!("{}:{}", x, y);
@@ -385,8 +385,9 @@ fn main() {
   let args: Vec<String> = env::args().collect();
   let decoder = png::Decoder::new(File::open(&args[1]).unwrap());
   let (info, mut reader) = decoder.read_info().unwrap();
+  let no_chanels = info.color_type.samples() as u32;
   let mut buf = vec![0; info.buffer_size()];
   reader.next_frame(&mut buf).unwrap();
-  let bitplane = pixels_to_bitplane(&buf, info.width, info.height);
+  let bitplane = pixels_to_bitplane(&buf, info.width, info.height, no_chanels);
   bitplane_to_linetext(bitplane, info.width, info.height);
 }
