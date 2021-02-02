@@ -34,9 +34,9 @@ you work for Google or Mozilla or Microsoft or Apple please fix this for the
 love of god.
 
 ![](./inputs/bird1bit.png)
-![](./examples/1612117350.png)
+![](./examples/1612243569.png)
 ![](./inputs/bloodhound1bit.png)
-![](./examples/1612117326.png)
+![](./examples/1612075258.png)
 
 ## Against the competition
 
@@ -46,7 +46,7 @@ The source image:
 
 The 1st is latest png2linetext algorithm vs whatever I could quickly find:
 
-![](./examples/1612117172.png)
+![](./examples/1612243605.png)
 
 vs https://manytools.org/hacker-tools/convert-images-to-ascii-art/go/
 
